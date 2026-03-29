@@ -1,0 +1,47 @@
+{
+  "name": "@typescript-eslint/website-eslint",
+  "private": true,
+  "description": "ESLint which works in browsers.",
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/typescript-eslint/typescript-eslint.git",
+    "directory": "packages/website-eslint"
+  },
+  "bugs": {
+    "url": "https://github.com/typescript-eslint/typescript-eslint/issues"
+  },
+  "homepage": "https://typescript-eslint.io",
+  "license": "MIT",
+  "type": "commonjs",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "engines": {
+    "node": "^18.18.0 || ^20.9.0 || >=21.1.0"
+  },
+  "scripts": {
+    "build": "tsx ./build.ts",
+    "format": "prettier --write \"./**/*.{ts,mts,cts,tsx,js,mjs,cjs,jsx,json,md,css}\" --ignore-path ../../.prettierignore",
+    "lint": "npx nx lint",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@eslint/js": "*",
+    "@typescript-eslint/eslint-plugin": "workspace:*",
+    "@typescript-eslint/parser": "workspace:*",
+    "@typescript-eslint/scope-manager": "workspace:*",
+    "@typescript-eslint/typescript-estree": "workspace:*",
+    "@typescript-eslint/visitor-keys": "workspace:*",
+    "esbuild": "~0.24.0",
+    "eslint": "*",
+    "esquery": "*",
+    "prettier": "^3.2.5",
+    "tsx": "*"
+  }
+}
